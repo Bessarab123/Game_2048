@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D8FF9900"
+    tools:context=".GameActivity">
+
+    <ImageView
+        android:id="@+id/game_logo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
+
+    <TextView
+        android:id="@+id/TextViewScore"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:text="Очки"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/game_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/game_logo"
+        app:layout_constraintTop_toBottomOf="@+id/TextViewMaxScore" />
+
+    <TextView
+        android:id="@+id/TextViewMaxScore"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:text="Рекорд"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/TextViewScore"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/game_logo"
+        app:layout_constraintTop_toTopOf="@+id/game_logo" />
+
+    <ImageButton
+        android:id="@+id/button_back"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/back"
+        android:contentDescription="Откат"
+        android:onClick="stepBackField"
+        app:layout_constraintEnd_toStartOf="@+id/buttonRestart"
+        app:layout_constraintTop_toBottomOf="@+id/game_logo" />
+
+    <ImageButton
+        android:id="@+id/buttonRestart"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/restart"
+        android:contentDescription="Начать заново"
+        android:onClick="restartGame"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/game_logo" />
+
+    <ImageButton
+        android:id="@+id/buttonClose"
+        style="@style/Widget.AppCompat.ImageButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="32dp"
+        android:background="@drawable/home"
+        android:contentDescription="Выйти"
+        android:onClick="closeGame"
+        app:layout_constraintEnd_toStartOf="@+id/button_back"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/game_logo" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/gameField"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_back" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
